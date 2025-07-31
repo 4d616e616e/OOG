@@ -1,0 +1,32 @@
+{
+  "name": "khabargaon",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "build:staging": "cross-env NODE_ENV=test next build",
+    "start:staging": "cross-env NODE_ENV=test next start -p 4400",
+    "build:prod": "cross-env NODE_ENV=production next build",
+    "start:prod": "cross-env NODE_ENV=production next start -p 4400"
+  },
+  "dependencies": {
+    "@emotion/react": "^11.14.0",
+    "@emotion/styled": "^11.14.1",
+    "@mui/icons-material": "^5.18.0",
+    "@mui/material": "^5.18.0",
+    "@next/font": "^14.2.6",
+    "axios": "^1.7.3",
+    "eslint": "8.57.0",
+    "eslint-config-next": "14.2.5",
+    "next": "13.4.19",
+    "react": "18.3.1",
+    "react-dom": "18.3.1",
+    "swiper": "^11.2.10"
+  },
+  "devDependencies": {
+    "cross-env": "^7.0.3"
+  }
+}
