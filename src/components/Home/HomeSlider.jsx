@@ -16,11 +16,11 @@ export const HomeSlider = () => {
     <>
       <Box sx={{ bgcolor: "#FAFBF9" }}>
         <Container maxWidth="xl">
-          <Box sx={{ py: 4 }}>
+          <Box sx={{ pt: 4, pb: { xs: 0, md: 4 } }}>
             <Typography
               className="gradient-text-one font-sora"
               fontWeight={700}
-              fontSize={{ xs: "", md: "64px" }}
+              fontSize={{ xs: "26px", sm: "44px", md: "64px" }}
               lineHeight={{ xs: "", md: "93px" }}
               textAlign={"center"}
             >
@@ -29,7 +29,7 @@ export const HomeSlider = () => {
             <Typography
               className="gradient-text-one font-sora"
               fontWeight={700}
-              fontSize={{ xs: "", md: "64px" }}
+              fontSize={{ xs: "26px", sm: "44px", md: "64px" }}
               lineHeight={{ xs: "", md: "93px" }}
               textAlign={"center"}
             >
@@ -40,30 +40,37 @@ export const HomeSlider = () => {
                 display: "flex",
                 alignItems: "center",
                 justifyContent: "center",
-                gap: 2.5,
+                gap: { xs: 1.5, md: 2.5 },
               }}
             >
               <Typography
                 className="gradient-text-one font-sora"
                 fontWeight={700}
-                fontSize={{ xs: "", md: "64px" }}
+                fontSize={{ xs: "26px", sm: "44px", md: "64px" }}
                 lineHeight={{ xs: "", md: "93px" }}
                 textAlign={"center"}
               >
                 Energy
               </Typography>
-              <Box>
+              <Box
+                sx={{
+                  position: "relative",
+                  overflow: "hidden",
+                  height: { xs: "30px", sm: "50px", md: "70px" },
+                  width: { xs: "30px", sm: "50px", md: "70px" },
+                }}
+              >
                 <Image
                   src={"/images/earth.svg"}
-                  layout="intrinsic"
-                  height={70}
-                  width={70}
+                  layout="fill"
+                  objectFit="cover"
+                  objectPosition="center"
                 />
               </Box>
               <Typography
                 className="gradient-text-one font-sora"
                 fontWeight={700}
-                fontSize={{ xs: "", md: "64px" }}
+                fontSize={{ xs: "26px", sm: "44px", md: "64px" }}
                 lineHeight={{ xs: "", md: "93px" }}
                 textAlign={"center"}
               >
@@ -78,8 +85,8 @@ export const HomeSlider = () => {
             backgroundSize: "contain",
             backgroundRepeat: "no-repeat",
             backgroundPosition: "top",
-            minHeight: "300px",
-            py: 10,
+            minHeight: { xs: "200px", md: "300px" },
+            py: { xs: 5, md: 10 },
           }}
         >
           <Swiper
@@ -90,6 +97,7 @@ export const HomeSlider = () => {
               0: { slidesPerView: 1 },
             }}
             loop={true}
+            initialSlide={1}
             spaceBetween={46}
             centeredSlides={true}
             autoplay={{
@@ -103,7 +111,7 @@ export const HomeSlider = () => {
                 <Box
                   sx={{
                     position: "relative",
-                    height: "400px",
+                    height: { xs: "200px", md: "400px" },
                     width: "100%",
                     overflow: "hidden",
                   }}

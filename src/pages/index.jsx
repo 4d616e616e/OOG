@@ -13,7 +13,7 @@ export default function Home({}) {
   return (
     <>
       <Layout>
-        <Box bgcolor={"#FAFBF9"}>
+        <Box bgcolor={"#FAFBF9"} sx={{ overflow: "hidden" }}>
           <HomeSlider />
           <AboutUs />
           <Future />

@@ -1,17 +1,22 @@
-import { Box, Container, Grid, Typography } from "@mui/material";
+import { Box, Container, Grid, Typography, useMediaQuery } from "@mui/material";
 import React from "react";
 import { AboutUsSliderDesktop } from "./Responsive/AboutUsSliderDesktop";
+import { AboutUsSliderMobile } from "./Responsive/AboutUsSliderMobile";
 
 export const AboutUs = () => {
+  const isMobile = useMediaQuery("(max-width: 768px)");
   return (
     <>
       <Box>
-        <Container maxWidth="xl" sx={{ mt: "60px", pb: "120px" }}>
+        <Container
+          maxWidth="xl"
+          sx={{ mt: "0px", pb: { xs: "40px", md: "120px" } }}
+        >
           <Grid container>
             <Grid item xs={12} md={6}>
               <Typography
                 fontWeight={400}
-                fontSize={{ xs: "", md: "24px" }}
+                fontSize={{ xs: "18px", md: "24px" }}
                 className="font-sora"
                 sx={{ color: "#303A26" }}
               >
@@ -19,7 +24,7 @@ export const AboutUs = () => {
               </Typography>
               <Typography
                 fontWeight={700}
-                fontSize={{ xs: "", md: "48px" }}
+                fontSize={{ xs: "32px", md: "48px" }}
                 className="font-sora"
                 sx={{ color: "#303A26" }}
               >
@@ -27,10 +32,10 @@ export const AboutUs = () => {
               </Typography>
               <Typography
                 fontWeight={400}
-                fontSize={{ xs: "", md: "24px" }}
-                lineHeight={{ xs: "", md: "30px" }}
+                fontSize={{ xs: "16px", md: "24px" }}
+                lineHeight={{ xs: "22px", md: "30px" }}
                 className="font-sora"
-                sx={{ color: "#586150", mt: "19px" }}
+                sx={{ color: "#586150", mt: { xs: "2.2px", md: "19px" } }}
               >
                 Founded in 2010 with the support of the Government of the
                 Sultanate of Oman, OVERSEAS OIL & GAS (OOG) is a global leader
@@ -40,22 +45,31 @@ export const AboutUs = () => {
               </Typography>
               <Typography
                 fontWeight={400}
-                fontSize={{ xs: "", md: "24px" }}
-                lineHeight={{ xs: "", md: "30px" }}
+                fontSize={{ xs: "16px", md: "24px" }}
+                lineHeight={{ xs: "22px", md: "30px" }}
                 className="font-sora"
-                sx={{ color: "#586150", mt: "22px" }}
+                sx={{ color: "#586150", mt: { xs: "16px", md: "22px" } }}
               >
                 Guided by a commitment to efficiency, transparency, and safety,
                 the company committed to building a sustainable global business
                 that fosters community impact and trust.
               </Typography>
             </Grid>
-            <Grid item xs={12} md={6} sx={{ pl: 10 }}>
+            <Grid
+              item
+              xs={12}
+              md={6}
+              sx={{ pl: { xs: 0, md: 10 }, mt: { xs: "36px", md: 0 } }}
+            >
               <Box
-                sx={{ height: "410px", width: "100%", borderRadius: "16px" }}
+                sx={{
+                  height: { xs: "263px", sm: "340px", md: "410px" },
+                  width: "100%",
+                  borderRadius: "16px",
+                }}
                 className="gradient-bg-color"
               >
-                <AboutUsSliderDesktop />
+                {isMobile ? <AboutUsSliderMobile /> : <AboutUsSliderDesktop />}
               </Box>
             </Grid>
           </Grid>

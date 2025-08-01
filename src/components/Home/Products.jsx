@@ -1,8 +1,9 @@
-import { Box, Container, Grid, Typography } from "@mui/material";
+import { Box, Container, Grid, Typography, useMediaQuery } from "@mui/material";
 import Image from "next/image";
 import React from "react";
 
 export const Products = () => {
+  const isMobile = useMediaQuery("(max-width:768px)");
   return (
     <>
       <Box
@@ -20,7 +21,7 @@ export const Products = () => {
           backgroundSize: "cover, cover, cover",
           backgroundRepeat: "no-repeat, no-repeat, no-repeat",
           backgroundPosition: "center, center, center",
-          my: "80px",
+          my: { xs: "40px", md: "80px" },
           py: "30px",
         }}
       >
@@ -36,18 +37,18 @@ export const Products = () => {
             <Grid item xs={12} md={6}>
               <Typography
                 fontWeight={600}
-                fontSize={{ xs: "", md: "48px" }}
-                lineHeight={{ xs: "", md: "54px" }}
-                sx={{ color: "#3F6341", pl: 10 }}
+                fontSize={{ xs: "28px", md: "48px" }}
+                lineHeight={{ xs: "29px", md: "54px" }}
+                sx={{ color: "#3F6341", pl: { xs: 0, md: 10 } }}
                 className="font-sora"
               >
                 We offer a variety of products
               </Typography>
               <Typography
                 fontWeight={400}
-                fontSize={{ xs: "", md: "32px" }}
-                lineHeight={{ xs: "", md: "40px" }}
-                sx={{ color: "#3F6341E5", pl: 10, mt: "35px" }}
+                fontSize={{ xs: "18px", md: "32px" }}
+                lineHeight={{ xs: "22px", md: "40px" }}
+                sx={{ color: "#3F6341E5", pl: { xs: 0, md: 10 }, mt: "35px" }}
                 className="font-sora"
               >
                 We trade in quality Hydrocarbon products like:
@@ -60,14 +61,24 @@ export const Products = () => {
               sx={{
                 display: "flex",
                 justifyContent: "flex-end",
+                mt: { xs: "56px", md: 0 },
               }}
             >
-              <Image
-                src={"/images/products/img1.png"}
-                layout="intrinsic"
-                width={566}
-                height={500}
-              />
+              {isMobile ? (
+                <Image
+                  src={"/images/products/img2.png"}
+                  layout="intrinsic"
+                  width={546}
+                  height={213}
+                />
+              ) : (
+                <Image
+                  src={"/images/products/img1.png"}
+                  layout="intrinsic"
+                  width={566}
+                  height={500}
+                />
+              )}
             </Grid>
           </Grid>
         </Container>
