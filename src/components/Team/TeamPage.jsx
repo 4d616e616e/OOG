@@ -1,11 +1,20 @@
 import React, { useState } from "react";
-import { Box, Container, Grid, Modal, Typography } from "@mui/material";
+import {
+  Box,
+  Container,
+  Grid,
+  Modal,
+  Typography,
+  useMediaQuery,
+} from "@mui/material";
 import { TEAMMEMBERS } from "@/constant";
 import Image from "next/image";
 import { TeamMemberModal } from "./TeamMemberModal";
 import { ContactUs } from "./ContactUs";
+import { TeamMemberModalMobile } from "./TeamMemberModalMobile";
 
 export const TeamPage = () => {
+  const isSmallScreen = useMediaQuery("(max-width:768px)");
   const [openModal, setOpenModal] = useState(false);
   const [memberData, setMemberData] = useState();
 
@@ -106,15 +115,24 @@ export const TeamPage = () => {
             left: "50%",
             transform: "translate(-50%, -50%)",
             bgcolor: "background.paper",
-            width: { xs: "50%", md: "1026px" },
-            borderRadius: "6px",
+            width: { xs: "100vw", md: "1026px" },
+            height: { xs: "100vh", md: "auto" },
+            borderRadius: { xs: "0px", md: "6px" },
             outline: "none",
+            overflow: "auto",
           }}
         >
-          <TeamMemberModal
-            setOpenModal={setOpenModal}
-            memberData={memberData}
-          />
+          {isSmallScreen ? (
+            <TeamMemberModalMobile
+              setOpenModal={setOpenModal}
+              memberData={memberData}
+            />
+          ) : (
+            <TeamMemberModal
+              setOpenModal={setOpenModal}
+              memberData={memberData}
+            />
+          )}
         </Box>
       </Modal>
     </>

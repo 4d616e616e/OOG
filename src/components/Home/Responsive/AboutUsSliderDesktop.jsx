@@ -7,7 +7,7 @@ export const AboutUsSliderDesktop = () => {
     <>
       <Grid container>
         <Grid xs={12} md={6}>
-          <Grid container gap={3} sx={{ pl: 7, mt: -12 }}>
+          <Grid container gap={3} sx={{ pl: 7, mt: -2 }}>
             <Grid item xs={12} sx={{ px: 3 }}>
               <Box
                 sx={{
@@ -49,7 +49,7 @@ export const AboutUsSliderDesktop = () => {
           </Grid>
         </Grid>
         <Grid xs={12} md={6}>
-          <Grid container gap={3} sx={{ pr: 7, mt: 12 }}>
+          <Grid container gap={3} sx={{ pr: 7, mt: 0 }}>
             <Grid item xs={12} sx={{ px: 3 }}>
               <Box
                 sx={{

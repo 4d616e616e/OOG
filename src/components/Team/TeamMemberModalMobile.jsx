@@ -1,12 +1,13 @@
 import { Close } from "@mui/icons-material";
-import { Box, Grid, Typography } from "@mui/material";
+import { Box, Grid, Typography, useMediaQuery } from "@mui/material";
 import Image from "next/image";
-import React from "react";
 
-export const TeamMemberModal = ({ setOpenModal, memberData }) => {
+export const TeamMemberModalMobile = ({ setOpenModal, memberData }) => {
+  const isSmallScreen = useMediaQuery("(min-width: 768px)");
+
   return (
     <>
-      <Box>
+      <Box sx={{ pb: 5 }}>
         <Box sx={{ display: "flex", flexDirection: "row-reverse", p: "32px" }}>
           <Close
             onClick={() => setOpenModal(false)}
@@ -15,29 +16,33 @@ export const TeamMemberModal = ({ setOpenModal, memberData }) => {
         </Box>
         <Box
           sx={{
-            px: "58px",
-            pt: "38px",
-            pb: { md: "140px", lg: "100px" },
-            position: "relative",
+            px: "12px",
           }}
         >
-          <Box sx={{ position: "absolute", top: 0 }}>
-            <Image
-              src={memberData?.img}
-              layout="intrinsic"
-              height={344}
-              width={344}
-            />
-          </Box>
           <Grid container>
-            <Grid xs={4}></Grid>
+            <Grid
+              xs={12}
+              sx={{
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+              }}
+            >
+              <Image
+                src={memberData?.img}
+                layout="intrinsic"
+                height={isSmallScreen ? 344 : 300}
+                width={isSmallScreen ? 344 : 300}
+              />
+            </Grid>
             <Grid
               sx={{
                 position: "relative",
                 borderRadius: "8px",
-                py: "46px",
-                pl: "78px",
-                pr: "46px",
+                px: "17px",
+                pt: "170px",
+                pb: "20px",
+                mt: -20,
                 "&::before": {
                   content: '""',
                   position: "absolute",
@@ -54,20 +59,15 @@ export const TeamMemberModal = ({ setOpenModal, memberData }) => {
                   zIndex: -1,
                 },
               }}
-              xs={8}
+              xs={12}
             >
               <Typography
-                fontSize={{ xs: "", md: "28px", lg: "32px" }}
-                lineHeight={{ xs: "", md: "46px" }}
+                fontSize="24px"
+                lineHeight="46px"
                 fontWeight={700}
                 className="font-sora"
                 sx={{
                   color: "#262626",
-                  position: "absolute",
-                  top: "-23px", // Half of line height to center on border
-                  left: "60px", // Same as container's left padding
-                  background: "white", // Background color to hide border behind text
-                  px: 2, // Padding left/right for better look
                 }}
               >
                 {memberData?.name}
@@ -75,8 +75,8 @@ export const TeamMemberModal = ({ setOpenModal, memberData }) => {
               <Typography
                 className="font-sora"
                 sx={{ color: "#4A4A4A", mt: 3 }} // Add margin top to compensate for name position
-                fontSize={{ xs: "", md: "18px", lg: "22px" }}
-                lineHeight={{ xs: "", md: "24px", lg: "30px" }}
+                fontSize="18px"
+                lineHeight="30px"
                 fontWeight={400}
               >
                 {memberData?.description}
