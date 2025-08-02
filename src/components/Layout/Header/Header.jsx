@@ -155,6 +155,9 @@ export const Header = () => {
                     pb: "18px",
                     borderTop: "1px solid #00000014",
                     borderBottom: key === 3 && "1px solid #00000014",
+                    background:
+                      router.pathname === item?.link &&
+                      "linear-gradient(90deg, rgba(30, 145, 48, 0.08) 0%, rgba(41, 177, 71, 0.08) 22.4%, rgba(88, 198, 49, 0.08) 65.9%, rgba(118, 218, 56, 0.08) 91.9%)",
                     "&:hover": {
                       background:
                         "linear-gradient(90deg, rgba(30, 145, 48, 0.08) 0%, rgba(41, 177, 71, 0.08) 22.4%, rgba(88, 198, 49, 0.08) 65.9%, rgba(118, 218, 56, 0.08) 91.9%)",
