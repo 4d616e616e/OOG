@@ -1,8 +1,33 @@
 import { Box, Container, Grid, Typography } from "@mui/material";
 import Image from "next/image";
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 
 export const ComingNext = () => {
+  const [isVisible, setIsVisible] = useState(false);
+  const componentRef = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+          // Optional: Disconnect observer after first trigger
+          observer.disconnect();
+        }
+      },
+      {
+        threshold: 0.3, // Trigger when 30% of component is visible
+        rootMargin: "0px 0px -50px 0px", // Trigger slightly before fully visible
+      }
+    );
+
+    if (componentRef.current) {
+      observer.observe(componentRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <>
       <Box sx={{ mt: { xs: "40px", md: "105px" } }}>
@@ -56,15 +81,24 @@ export const ComingNext = () => {
                 with a capacity of 300,000 barrels per day.
               </Typography>
             </Box>
-            <Box sx={{ mx: { xs: -3, md: 0 } }}>
+            <Box sx={{ mx: { xs: -3, md: 0 } }} ref={componentRef}>
               <Grid
                 container
-                sx={{ mt: { xs: "12px", md: "156px" }, pb: "100px" }}
+                sx={{
+                  mt: { xs: "12px", md: "156px" },
+                  pb: { xs: "50px", md: "100px" },
+                }}
               >
                 <Grid
                   item
                   xs={4}
-                  sx={{ pl: { xs: 0, md: 10 }, pr: { xs: 0.8, md: 3 }, py: 6 }}
+                  sx={{
+                    pl: { xs: 0, md: 10 },
+                    pr: { xs: 0.8, md: 3 },
+                    py: 6,
+                    mt: isVisible ? 0 : "-50px",
+                    transition: "margin-top 0.8s ease-in-out",
+                  }}
                 >
                   <Box
                     sx={{
@@ -84,7 +118,15 @@ export const ComingNext = () => {
                     />
                   </Box>
                 </Grid>
-                <Grid item xs={4} sx={{ p: { xs: 0.8, md: 6 }, mt: "105px" }}>
+                <Grid
+                  item
+                  xs={4}
+                  sx={{
+                    p: { xs: 0.8, md: 6 },
+                    mt: isVisible ? { xs: "40px", md: 0 } : "105px",
+                    transition: "margin-top 0.8s ease-in-out",
+                  }}
+                >
                   <Box
                     sx={{
                       position: "relative",
@@ -106,7 +148,13 @@ export const ComingNext = () => {
                 <Grid
                   item
                   xs={4}
-                  sx={{ pr: { xs: 0, md: 10 }, pl: { xs: 0.8, md: 3 }, py: 6 }}
+                  sx={{
+                    pr: { xs: 0, md: 10 },
+                    pl: { xs: 0.8, md: 3 },
+                    py: 6,
+                    mt: isVisible ? 0 : "50px",
+                    transition: "margin-top 0.8s ease-in-out",
+                  }}
                 >
                   <Box
                     sx={{
