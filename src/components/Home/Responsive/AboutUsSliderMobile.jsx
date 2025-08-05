@@ -1,13 +1,45 @@
 import { Box, Grid } from "@mui/material";
 import Image from "next/image";
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 
 export const AboutUsSliderMobile = () => {
+  const [isVisible, setIsVisible] = useState(false);
+  const componentRef = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+          // Optional: Disconnect observer after first trigger
+          observer.disconnect();
+        }
+      },
+      {
+        threshold: 0.3, // Trigger when 30% of component is visible
+        rootMargin: "0px 0px -50px 0px", // Trigger slightly before fully visible
+      }
+    );
+
+    if (componentRef.current) {
+      observer.observe(componentRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
-    <>
+    <div ref={componentRef}>
       <Box sx={{ mx: -10 }}>
         <Grid container gap={1.2}>
-          <Grid xs={12} sx={{ ml: 30, mt: -1 }}>
+          <Grid
+            xs={12}
+            sx={{
+              ml: isVisible ? 0 : 30,
+              mt: -1,
+              transition: "margin-left 0.8s ease-in-out",
+            }}
+          >
             <Grid container>
               <Grid item xs={6} sx={{ px: 1 }}>
                 <Box
@@ -49,7 +81,14 @@ export const AboutUsSliderMobile = () => {
               </Grid>
             </Grid>
           </Grid>
-          <Grid xs={12} sx={{ mr: 30, mt: 1 }}>
+          <Grid
+            xs={12}
+            sx={{
+              mr: isVisible ? 0 : 30,
+              mt: 1,
+              transition: "margin-right 0.8s ease-in-out",
+            }}
+          >
             <Grid container>
               <Grid item xs={6} sx={{ px: 1 }}>
                 <Box
@@ -93,6 +132,6 @@ export const AboutUsSliderMobile = () => {
           </Grid>
         </Grid>
       </Box>
-    </>
+    </div>
   );
 };

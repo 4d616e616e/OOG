@@ -10,7 +10,7 @@ export const AboutUs = () => {
       <Box>
         <Container
           maxWidth="xl"
-          sx={{ mt: "0px", pb: { xs: "40px", md: "120px" } }}
+          sx={{ mt: "80px", pb: { xs: "40px", md: "120px" } }}
         >
           <Grid container>
             <Grid item xs={12} md={6}>
