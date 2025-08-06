@@ -16,7 +16,7 @@ export const VerticlesPageMobile = () => {
             sx={{ color: "#4A4A4A" }}
           >
             <span className="gradient-text-one">Our Business Verticals:</span>{" "}
-            Our Business Verticals: Trading, Development & Sustainable Solutions
+            Trading, Development & Sustainable Solutions
           </Typography>
         </Box>
 

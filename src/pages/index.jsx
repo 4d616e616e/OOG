@@ -6,17 +6,20 @@ import { HomeSlider } from "@/components/Home/HomeSlider";
 import { Products } from "@/components/Home/Products";
 import { Future } from "@/components/Home/Responsive/Future";
 import { Layout } from "@/components/Layout/Layout";
-import { Box } from "@mui/material";
+import { AnimationOne } from "@/components/TestAnimation/AnimationOne";
+import { Box, useMediaQuery } from "@mui/material";
 import React from "react";
 
 export default function Home({}) {
+  const isMobile = useMediaQuery("(max-width: 600px)");
   return (
     <>
       <Layout>
-        <Box bgcolor={"#FAFBF9"} sx={{ overflow: "hidden" }}>
+        <Box bgcolor={"#FAFBF9"} sx={{ overflow: isMobile && "hidden" }}>
           <HomeSlider />
           <AboutUs />
-          <Future />
+          {/* <Future /> */}
+          <AnimationOne />
           <BusinessAproach />
           <Products />
           <ComingNext />
