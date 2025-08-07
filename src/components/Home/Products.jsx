@@ -37,8 +37,8 @@ export const Products = () => {
             <Grid item xs={12} md={6}>
               <Typography
                 fontWeight={600}
-                fontSize={{ xs: "28px", md: "48px" }}
-                lineHeight={{ xs: "29px", md: "54px" }}
+                fontSize={{ xs: "28px", md: "36px", lg: "48px" }}
+                lineHeight={{ xs: "29px", md: "40px", lg: "54px" }}
                 sx={{ color: "#3F6341", pl: { xs: 0, md: 10 } }}
                 className="font-sora"
               >
@@ -46,8 +46,8 @@ export const Products = () => {
               </Typography>
               <Typography
                 fontWeight={400}
-                fontSize={{ xs: "18px", md: "32px" }}
-                lineHeight={{ xs: "22px", md: "40px" }}
+                fontSize={{ xs: "18px", md: "28px", lg: "32px" }}
+                lineHeight={{ xs: "22px", md: "34px", lg: "40px" }}
                 sx={{ color: "#3F6341E5", pl: { xs: 0, md: 10 }, mt: "35px" }}
                 className="font-sora"
               >

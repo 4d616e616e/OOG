@@ -35,17 +35,25 @@ export const AboutUsSliderMobile = () => {
           <Grid
             xs={12}
             sx={{
-              ml: isVisible ? 0 : 30,
+              ml: isVisible ? 15 : 40,
               mt: -1,
               transition: "margin-left 0.8s ease-in-out",
             }}
           >
             <Grid container>
-              <Grid item xs={6} sx={{ px: 1 }}>
+              <Grid
+                item
+                xs={6}
+                sx={{
+                  px: 1,
+                  display: "flex",
+                  justifyContent: "flex-end",
+                }}
+              >
                 <Box
                   sx={{
                     height: { xs: "129px", sm: "170px" },
-                    width: "100%",
+                    width: { xs: "148px", sm: "100%" },
                     overflow: "hidden",
                     position: "relative",
                     boxShadow: "0px 2px 5px 0px #0F481880",
@@ -64,7 +72,7 @@ export const AboutUsSliderMobile = () => {
                 <Box
                   sx={{
                     height: { xs: "129px", sm: "170px" },
-                    width: "100%",
+                    width: { xs: "148px", sm: "100%" },
                     overflow: "hidden",
                     position: "relative",
                     boxShadow: "0px 2px 5px 0px #0F481880",
@@ -84,17 +92,21 @@ export const AboutUsSliderMobile = () => {
           <Grid
             xs={12}
             sx={{
-              mr: isVisible ? 0 : 30,
+              mr: isVisible ? 15 : 40,
               mt: 1,
               transition: "margin-right 0.8s ease-in-out",
             }}
           >
             <Grid container>
-              <Grid item xs={6} sx={{ px: 1 }}>
+              <Grid
+                item
+                xs={6}
+                sx={{ px: 1, display: "flex", justifyContent: "flex-end" }}
+              >
                 <Box
                   sx={{
                     height: { xs: "129px", sm: "170px" },
-                    width: "100%",
+                    width: { xs: "148px", sm: "100%" },
                     overflow: "hidden",
                     position: "relative",
                     boxShadow: "0px 2px 5px 0px #0F481880",
@@ -113,7 +125,7 @@ export const AboutUsSliderMobile = () => {
                 <Box
                   sx={{
                     height: { xs: "129px", sm: "170px" },
-                    width: "100%",
+                    width: { xs: "148px", sm: "100%" },
                     overflow: "hidden",
                     position: "relative",
                     boxShadow: "0px 2px 5px 0px #0F481880",

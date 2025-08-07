@@ -85,7 +85,7 @@ export const ComingNext = () => {
               <Grid
                 container
                 sx={{
-                  mt: { xs: "12px", md: "156px" },
+                  mt: { xs: "12px", md: "60px", lg: "156px" },
                   pb: { xs: "50px", md: "100px" },
                 }}
               >
@@ -93,7 +93,7 @@ export const ComingNext = () => {
                   item
                   xs={4}
                   sx={{
-                    pl: { xs: 0, md: 10 },
+                    pl: { xs: 0, md: 3, lg: 10 },
                     pr: { xs: 0.8, md: 3 },
                     py: 6,
                     mt: isVisible ? 0 : "-50px",
@@ -104,7 +104,12 @@ export const ComingNext = () => {
                     sx={{
                       position: "relative",
                       overflow: "hidden",
-                      height: { xs: "174px", sm: "300px", md: "470px" },
+                      height: {
+                        xs: "174px",
+                        sm: "300px",
+                        md: "400px",
+                        lg: "470px",
+                      },
                       width: "100%",
                       borderRadius: { xs: "7px", md: "20px" },
                       boxShadow: "8px 8px 69.1px 0px #C3F3C5",
@@ -122,8 +127,8 @@ export const ComingNext = () => {
                   item
                   xs={4}
                   sx={{
-                    p: { xs: 0.8, md: 6 },
-                    mt: isVisible ? { xs: "40px", md: 0 } : "105px",
+                    p: { xs: 0.8, md: 3, lg: 6 },
+                    mt: isVisible ? { xs: "40px", md: "25px" } : "105px",
                     transition: "margin-top 0.8s ease-in-out",
                   }}
                 >
@@ -131,7 +136,12 @@ export const ComingNext = () => {
                     sx={{
                       position: "relative",
                       overflow: "hidden",
-                      height: { xs: "174px", sm: "300px", md: "470px" },
+                      height: {
+                        xs: "174px",
+                        sm: "300px",
+                        md: "400px",
+                        lg: "470px",
+                      },
                       width: "100%",
                       borderRadius: { xs: "7px", md: "20px" },
                       boxShadow: "8px 8px 69.1px 0px #C3F3C5",
@@ -149,7 +159,7 @@ export const ComingNext = () => {
                   item
                   xs={4}
                   sx={{
-                    pr: { xs: 0, md: 10 },
+                    pr: { xs: 0, md: 3, lg: 10 },
                     pl: { xs: 0.8, md: 3 },
                     py: 6,
                     mt: isVisible ? 0 : "50px",
@@ -160,7 +170,12 @@ export const ComingNext = () => {
                     sx={{
                       position: "relative",
                       overflow: "hidden",
-                      height: { xs: "174px", sm: "300px", md: "470px" },
+                      height: {
+                        xs: "174px",
+                        sm: "300px",
+                        md: "400px",
+                        lg: "470px",
+                      },
                       width: "100%",
                       borderRadius: { xs: "7px", md: "20px" },
                       boxShadow: "8px 8px 69.1px 0px #C3F3C5",

@@ -1,3 +1,4 @@
+import { IMAGES_TOP_CONT } from "@/constant";
 import { Box, Container, Typography } from "@mui/material";
 import Image from "next/image";
 import "swiper/css";
@@ -6,84 +7,6 @@ import { Autoplay } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 
 export const HomeSlider = () => {
-  const images = [
-    "/images/hs/img1.png",
-    "/images/hs/img2.png",
-    "/images/hs/img3.png",
-    "/images/hs/img4.png",
-    "/images/hs/img1.png",
-    "/images/hs/img2.png",
-    "/images/hs/img3.png",
-    "/images/hs/img4.png",
-    "/images/hs/img1.png",
-    "/images/hs/img2.png",
-    "/images/hs/img3.png",
-    "/images/hs/img4.png",
-    "/images/hs/img1.png",
-    "/images/hs/img2.png",
-    "/images/hs/img3.png",
-    "/images/hs/img4.png",
-    "/images/hs/img1.png",
-    "/images/hs/img2.png",
-    "/images/hs/img3.png",
-    "/images/hs/img4.png",
-    "/images/hs/img1.png",
-    "/images/hs/img2.png",
-    "/images/hs/img3.png",
-    "/images/hs/img4.png",
-    "/images/hs/img1.png",
-    "/images/hs/img2.png",
-    "/images/hs/img3.png",
-    "/images/hs/img4.png",
-    "/images/hs/img1.png",
-    "/images/hs/img2.png",
-    "/images/hs/img3.png",
-    "/images/hs/img4.png",
-    "/images/hs/img1.png",
-    "/images/hs/img2.png",
-    "/images/hs/img3.png",
-    "/images/hs/img4.png",
-    "/images/hs/img1.png",
-    "/images/hs/img2.png",
-    "/images/hs/img3.png",
-    "/images/hs/img4.png",
-    "/images/hs/img1.png",
-    "/images/hs/img2.png",
-    "/images/hs/img3.png",
-    "/images/hs/img4.png",
-    "/images/hs/img1.png",
-    "/images/hs/img2.png",
-    "/images/hs/img3.png",
-    "/images/hs/img4.png",
-    "/images/hs/img1.png",
-    "/images/hs/img2.png",
-    "/images/hs/img3.png",
-    "/images/hs/img4.png",
-    "/images/hs/img1.png",
-    "/images/hs/img2.png",
-    "/images/hs/img3.png",
-    "/images/hs/img4.png",
-    "/images/hs/img1.png",
-    "/images/hs/img2.png",
-    "/images/hs/img3.png",
-    "/images/hs/img4.png",
-    "/images/hs/img1.png",
-    "/images/hs/img2.png",
-    "/images/hs/img3.png",
-    "/images/hs/img4.png",
-    "/images/hs/img1.png",
-    "/images/hs/img2.png",
-    "/images/hs/img3.png",
-    "/images/hs/img4.png",
-    "/images/hs/img1.png",
-    "/images/hs/img2.png",
-    "/images/hs/img3.png",
-    "/images/hs/img4.png",
-    "/images/hs/img1.png",
-    "/images/hs/img2.png",
-    "/images/hs/img3.png",
-    "/images/hs/img4.png",
-  ];
   return (
     <>
       <Box sx={{ bgcolor: "#FAFBF9" }}>
@@ -92,8 +15,7 @@ export const HomeSlider = () => {
             <Typography
               className="gradient-text-one font-sora"
               fontWeight={700}
-              fontSize={{ xs: "26px", sm: "44px", md: "64px" }}
-              lineHeight={{ xs: "", md: "93px" }}
+              fontSize={{ xs: "26px", sm: "44px", md: "54px", lg: "64px" }}
               textAlign={"center"}
             >
               Driving Innovation and{" "}
@@ -101,8 +23,7 @@ export const HomeSlider = () => {
             <Typography
               className="gradient-text-one font-sora"
               fontWeight={700}
-              fontSize={{ xs: "26px", sm: "44px", md: "64px" }}
-              lineHeight={{ xs: "", md: "93px" }}
+              fontSize={{ xs: "26px", sm: "44px", md: "54px", lg: "64px" }}
               textAlign={"center"}
             >
               Integrity In Sustainable{" "}
@@ -112,14 +33,13 @@ export const HomeSlider = () => {
                 display: "flex",
                 alignItems: "center",
                 justifyContent: "center",
-                gap: { xs: 1.5, md: 2.5 },
+                gap: { xs: 1.5, lg: 2.5 },
               }}
             >
               <Typography
                 className="gradient-text-one font-sora"
                 fontWeight={700}
-                fontSize={{ xs: "26px", sm: "44px", md: "64px" }}
-                lineHeight={{ xs: "", md: "93px" }}
+                fontSize={{ xs: "26px", sm: "44px", md: "54px", lg: "64px" }}
                 textAlign={"center"}
               >
                 Energy
@@ -128,8 +48,8 @@ export const HomeSlider = () => {
                 sx={{
                   position: "relative",
                   overflow: "hidden",
-                  height: { xs: "30px", sm: "50px", md: "70px" },
-                  width: { xs: "30px", sm: "50px", md: "70px" },
+                  height: { xs: "30px", sm: "50px", md: "54", lg: "70px" },
+                  width: { xs: "30px", sm: "50px", md: "54", lg: "70px" },
                 }}
               >
                 <Image
@@ -142,8 +62,7 @@ export const HomeSlider = () => {
               <Typography
                 className="gradient-text-one font-sora"
                 fontWeight={700}
-                fontSize={{ xs: "26px", sm: "44px", md: "64px" }}
-                lineHeight={{ xs: "", md: "93px" }}
+                fontSize={{ xs: "26px", sm: "44px", md: "54px", lg: "64px" }}
                 textAlign={"center"}
               >
                 Worldwide
@@ -164,7 +83,7 @@ export const HomeSlider = () => {
           <Swiper
             breakpoints={{
               1440: { slidesPerView: 2.5 },
-              1024: { slidesPerView: 3 },
+              1024: { slidesPerView: 2.2 },
               600: { slidesPerView: 2 },
               0: { slidesPerView: 1 },
             }}
@@ -177,12 +96,12 @@ export const HomeSlider = () => {
             }}
             modules={[Autoplay]}
           >
-            {images?.map((item, key) => (
+            {IMAGES_TOP_CONT?.map((item, key) => (
               <SwiperSlide key={key}>
                 <Box
                   sx={{
                     position: "relative",
-                    height: { xs: "200px", md: "400px" },
+                    height: { xs: "200px", md: "280px", lg: "400px" },
                     width: "100%",
                     overflow: "hidden",
                   }}

@@ -10,13 +10,13 @@ export const AboutUs = () => {
       <Box>
         <Container
           maxWidth="xl"
-          sx={{ mt: "80px", pb: { xs: "40px", md: "0px" } }}
+          sx={{ mt: { xs: "30px", md: "80px" }, pb: { xs: "40px", md: "0px" } }}
         >
           <Grid container>
             <Grid item xs={12} md={6}>
               <Typography
                 fontWeight={400}
-                fontSize={{ xs: "18px", md: "24px" }}
+                fontSize={{ xs: "18px", lg: "24px" }}
                 className="font-sora"
                 sx={{ color: "#303A26" }}
               >
@@ -24,7 +24,7 @@ export const AboutUs = () => {
               </Typography>
               <Typography
                 fontWeight={700}
-                fontSize={{ xs: "32px", md: "48px" }}
+                fontSize={{ xs: "32px", lg: "48px" }}
                 className="font-sora"
                 sx={{ color: "#303A26" }}
               >
@@ -32,10 +32,13 @@ export const AboutUs = () => {
               </Typography>
               <Typography
                 fontWeight={400}
-                fontSize={{ xs: "16px", md: "24px" }}
-                lineHeight={{ xs: "22px", md: "30px" }}
+                fontSize={{ xs: "16px", md: "20px", lg: "24px" }}
+                lineHeight={{ xs: "22px", md: "28px", lg: "30px" }}
                 className="font-sora"
-                sx={{ color: "#586150", mt: { xs: "2.2px", md: "19px" } }}
+                sx={{
+                  color: "#586150",
+                  mt: { xs: "2.2px", md: "10px", lg: "19px" },
+                }}
               >
                 Founded in 2010 with the support of the Government of the
                 Sultanate of Oman, OVERSEAS OIL & GAS (OOG) is a global leader
@@ -45,8 +48,8 @@ export const AboutUs = () => {
               </Typography>
               <Typography
                 fontWeight={400}
-                fontSize={{ xs: "16px", md: "24px" }}
-                lineHeight={{ xs: "22px", md: "30px" }}
+                fontSize={{ xs: "16px", md: "20px", lg: "24px" }}
+                lineHeight={{ xs: "22px", md: "28px", lg: "30px" }}
                 className="font-sora"
                 sx={{ color: "#586150", mt: { xs: "16px", md: "22px" } }}
               >

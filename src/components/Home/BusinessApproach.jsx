@@ -6,7 +6,7 @@ export const BusinessAproach = () => {
   return (
     <>
       <Box>
-        <Container maxWidth="xl">
+        <Container maxWidth="xl" sx={{ mt: { md: "-50px", lg: 0 } }}>
           <Grid container>
             {/* LEFT CONTAINER */}
             <Grid
@@ -14,7 +14,7 @@ export const BusinessAproach = () => {
               xs={12}
               md={4}
               sx={{
-                pr: { xs: 0, md: "103px" },
+                pr: { xs: 0, md: "80px", lg: "103px" },
                 position: "sticky",
                 top: "100px",
                 alignSelf: "flex-start",
@@ -22,8 +22,8 @@ export const BusinessAproach = () => {
             >
               <Typography
                 fontWeight={600}
-                fontSize={{ xs: "28px", md: "48px" }}
-                lineHeight={{ xs: "29px", md: "54px" }}
+                fontSize={{ xs: "28px", md: "36px", lg: "48px" }}
+                lineHeight={{ xs: "29px", md: "42px", lg: "54px" }}
                 className="font-sora"
                 sx={{ color: "#303A26" }}
               >
@@ -47,13 +47,17 @@ export const BusinessAproach = () => {
               xs={12}
               md={8}
               sx={{
-                pl: { xs: 0, md: "103px" },
+                pl: { xs: 0, md: "50px", lg: "103px" },
                 my: { xs: "40px", md: 0 },
               }}
             >
               <Box sx={{ mx: { xs: -3, md: 0 } }}>
                 <Grid container>
-                  <Grid item xs={6} sx={{ pr: { xs: "9px", md: "62px" } }}>
+                  <Grid
+                    item
+                    xs={6}
+                    sx={{ pr: { xs: "9px", md: "20px", lg: "62px" } }}
+                  >
                     <Grid Container>
                       <Grid item xs={12}>
                         <Box
@@ -74,8 +78,8 @@ export const BusinessAproach = () => {
                         </Box>
                         <Typography
                           fontWeight={600}
-                          fontSize={{ xs: "18px", md: "24px" }}
-                          lineHeight={{ xs: "24px", md: "30px" }}
+                          fontSize={{ xs: "18px", md: "20px", lg: "24px" }}
+                          lineHeight={{ xs: "24px", md: "27px", lg: "30px" }}
                           className="font-sora"
                           sx={{
                             color: "#586150",
@@ -114,8 +118,8 @@ export const BusinessAproach = () => {
                         </Box>
                         <Typography
                           fontWeight={600}
-                          fontSize={{ xs: "18px", md: "24px" }}
-                          lineHeight={{ xs: "24px", md: "30px" }}
+                          fontSize={{ xs: "18px", md: "20px", lg: "24px" }}
+                          lineHeight={{ xs: "24px", md: "27px", lg: "30px" }}
                           className="font-sora"
                           sx={{
                             color: "#586150",
@@ -138,7 +142,7 @@ export const BusinessAproach = () => {
                     item
                     xs={6}
                     sx={{
-                      pl: { xs: "9px", md: "62px" },
+                      pl: { xs: "9px", md: "20px", lg: "62px" },
                       mt: { xs: "220px", md: "356px" },
                     }}
                   >
@@ -162,8 +166,8 @@ export const BusinessAproach = () => {
                         </Box>
                         <Typography
                           fontWeight={600}
-                          fontSize={{ xs: "18px", md: "24px" }}
-                          lineHeight={{ xs: "24px", md: "30px" }}
+                          fontSize={{ xs: "18px", md: "20px", lg: "24px" }}
+                          lineHeight={{ xs: "24px", md: "27px", lg: "30px" }}
                           className="font-sora"
                           sx={{ color: "#586150", mt: "14px", mr: 2.5 }}
                         >
@@ -197,8 +201,8 @@ export const BusinessAproach = () => {
                         </Box>
                         <Typography
                           fontWeight={600}
-                          fontSize={{ xs: "18px", md: "24px" }}
-                          lineHeight={{ xs: "24px", md: "30px" }}
+                          fontSize={{ xs: "18px", md: "20px", lg: "24px" }}
+                          lineHeight={{ xs: "24px", md: "27px", lg: "30px" }}
                           className="font-sora"
                           sx={{ color: "#586150", mt: "14px", mr: 2.5 }}
                         >

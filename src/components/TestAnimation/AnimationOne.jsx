@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from "react";
-import { Box, Typography, Grid, Container } from "@mui/material";
+import { Box, Typography, Grid, Container, useMediaQuery } from "@mui/material";
 import Image from "next/image";
 import { FILL_PATH, IMG_PATH, LINE_PATH } from "@/constant";
 
@@ -9,6 +9,9 @@ export const AnimationOne = () => {
   const boatOrbitRef = useRef(null);
   const spacerRef = useRef(null);
   const dottedLineRef = useRef(null);
+
+  const isMobile = useMediaQuery("(max-width: 768px)");
+  const isSmallLaptop = useMediaQuery("(max-width: 1024px)");
 
   useEffect(() => {
     const cont = containerRef.current;
@@ -140,6 +143,7 @@ export const AnimationOne = () => {
         sx={{
           position: "relative",
           overflow: "hidden",
+          // border: "2px solid green",
         }}
       >
         <Box
@@ -156,13 +160,20 @@ export const AnimationOne = () => {
             left: "auto",
             bottom: "auto",
             zIndex: 10,
+            // border: "1px solid black",
             mx: "auto",
             "&.is-pinned": {
               position: "fixed !important",
               top: 0,
               left: "50%",
               transform: "translateX(-50%)",
-              maxWidth: "1486px",
+              maxWidth: {
+                xs: "calc(100% - 32px)",
+                sm: "calc(100% - 48px)",
+                md: "calc(100% - 48px)",
+                lg: "calc(100% - 48px)",
+                xl: "1486px",
+              },
               width: "100%",
               zIndex: 10,
             },
@@ -171,7 +182,13 @@ export const AnimationOne = () => {
               bottom: 0,
               left: "50%",
               transform: "translateX(-50%)",
-              maxWidth: "1486px",
+              maxWidth: {
+                xs: "calc(100% - 32px)",
+                sm: "calc(100% - 48px)",
+                md: "calc(100% - 48px)",
+                lg: "calc(100% - 48px)",
+                xl: "1486px",
+              },
               width: "100%",
               zIndex: 10,
             },
@@ -184,8 +201,8 @@ export const AnimationOne = () => {
               backgroundRepeat: "no-repeat, no-repeat, no-repeat",
               backgroundPosition: "center, center, center",
               borderRadius: "16px",
-              pt: 13,
-              pb: 7,
+              pt: { xs: 15, md: 15, lg: 13 },
+              pb: { xs: 15, md: 15, lg: 7 },
             }}
           >
             <Grid container display={"flex"} alignItems={"center"}>
@@ -225,7 +242,11 @@ export const AnimationOne = () => {
                     position: "absolute",
                     width: "86px",
                     height: "51px",
-                    top: "calc(50% - 250px - 25.5px)",
+                    top: isMobile
+                      ? "calc(50% - 174.5px)"
+                      : isSmallLaptop
+                      ? "calc(50% - 190px)"
+                      : "calc(50% - 250px - 25.5px)",
                     left: "calc(50% - 43px)",
                   }}
                   xmlns="http://www.w3.org/2000/svg"
@@ -242,9 +263,14 @@ export const AnimationOne = () => {
                   ref={dottedLineRef}
                   sx={{
                     position: "absolute",
-                    top: "calc(50% - 222px - 25.5px)",
+                    top: isMobile
+                      ? "calc(50% - 145px)"
+                      : isSmallLaptop
+                      ? "calc(50% - 162px)"
+                      : "calc(50% - 222px - 25.5px)",
                     left: "calc(50% - -26px)",
                     pointerEvents: "none",
+                    // border: "1px solid black",
                   }}
                 >
                   <svg
@@ -252,15 +278,25 @@ export const AnimationOne = () => {
                     height="226"
                     viewBox="0 0 226 226"
                     fill="none"
+                    opacity={isMobile ? 0.8 : 0.4}
                     xmlns="http://www.w3.org/2000/svg"
                     style={{
-                      width: "226px",
-                      height: "226px",
+                      width: isMobile
+                        ? "130px"
+                        : isSmallLaptop
+                        ? "140px"
+                        : "226px",
+                      height: isMobile
+                        ? "130px"
+                        : isSmallLaptop
+                        ? "140px"
+                        : "226px",
+                      // border: "1px solid orange",
                     }}
                   >
                     <path
                       d={LINE_PATH}
-                      stroke="#FFFFFF"
+                      stroke="#B2EAB8"
                       stroke-width="3"
                       stroke-dasharray="8 8"
                     />
@@ -287,7 +323,11 @@ export const AnimationOne = () => {
                       position: "absolute",
                       width: "86px",
                       height: "51px",
-                      top: "calc(50% - 250px - 25.5px)",
+                      top: isMobile
+                        ? "calc(50% - 174.5px)"
+                        : isSmallLaptop
+                        ? "calc(50% - 190px)"
+                        : "calc(50% - 250px - 25.5px)",
                       left: "calc(50% - 43px)",
                     }}
                     xmlns="http://www.w3.org/2000/svg"
@@ -304,7 +344,11 @@ export const AnimationOne = () => {
                       position: "absolute",
                       width: "86px",
                       height: "51px",
-                      top: "calc(50% - 250px - 25.5px)",
+                      top: isMobile
+                        ? "calc(50% - 174.5px)"
+                        : isSmallLaptop
+                        ? "calc(50% - 190px)"
+                        : "calc(50% - 250px - 25.5px)",
                       left: "calc(50% - 43px)",
                     }}
                     xmlns="http://www.w3.org/2000/svg"
@@ -322,15 +366,20 @@ export const AnimationOne = () => {
                 xs={12}
                 md={8}
                 sx={{
-                  pr: { xs: 0, md: "56px" },
-                  pl: { xs: 0, md: "100px" },
-                  mt: { xs: "35px", md: 0 },
+                  pr: { xs: "30px", md: "56px" },
+                  pl: { xs: "30px", md: "100px" },
+                  mt: { xs: "70px", md: 0 },
                 }}
               >
                 <Typography
                   fontWeight={700}
-                  fontSize={{ xs: "24px", md: "28px", lg: "48px" }}
-                  lineHeight={{ xs: "28px", md: "40px", lg: "55px" }}
+                  fontSize={{ xs: "24px", sm: "30px", md: "36px", lg: "48px" }}
+                  lineHeight={{
+                    xs: "28px",
+                    sm: "40px",
+                    md: "46px",
+                    lg: "55px",
+                  }}
                   sx={{ color: "#3F6341" }}
                   textAlign={{ xs: "center", md: "left" }}
                 >

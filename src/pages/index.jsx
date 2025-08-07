@@ -4,21 +4,19 @@ import { BusinessAproach } from "@/components/Home/BusinessApproach";
 import { ComingNext } from "@/components/Home/ComingNext";
 import { HomeSlider } from "@/components/Home/HomeSlider";
 import { Products } from "@/components/Home/Products";
-import { Future } from "@/components/Home/Responsive/Future";
 import { Layout } from "@/components/Layout/Layout";
 import { AnimationOne } from "@/components/TestAnimation/AnimationOne";
 import { Box, useMediaQuery } from "@mui/material";
 import React from "react";
 
 export default function Home({}) {
-  const isMobile = useMediaQuery("(max-width: 600px)");
+  const isMobile = useMediaQuery("(max-width: 768px)");
   return (
     <>
       <Layout>
         <Box bgcolor={"#FAFBF9"} sx={{ overflow: isMobile && "hidden" }}>
           <HomeSlider />
           <AboutUs />
-          {/* <Future /> */}
           <AnimationOne />
           <BusinessAproach />
           <Products />

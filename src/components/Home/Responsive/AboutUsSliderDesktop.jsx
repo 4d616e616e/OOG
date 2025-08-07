@@ -36,15 +36,15 @@ export const AboutUsSliderDesktop = () => {
             container
             gap={3}
             sx={{
-              pl: 7,
-              mt: isVisible ? -1 : -12,
+              pl: { md: 3, lg: 7 },
+              mt: isVisible ? -4 : -13,
               transition: "margin-top 0.8s ease-in-out",
             }}
           >
-            <Grid item xs={12} sx={{ px: 3 }}>
+            <Grid item xs={12} sx={{ px: { md: 1, lg: 3 } }}>
               <Box
                 sx={{
-                  height: "201px",
+                  height: { md: "180px", lg: "201px" },
                   width: "100%",
                   overflow: "hidden",
                   position: "relative",
@@ -60,10 +60,10 @@ export const AboutUsSliderDesktop = () => {
                 />
               </Box>
             </Grid>
-            <Grid item xs={12} sx={{ px: 3 }}>
+            <Grid item xs={12} sx={{ px: { md: 1, lg: 3 } }}>
               <Box
                 sx={{
-                  height: "201px",
+                  height: { md: "180px", lg: "201px" },
                   width: "100%",
                   overflow: "hidden",
                   position: "relative",
@@ -86,15 +86,15 @@ export const AboutUsSliderDesktop = () => {
             container
             gap={3}
             sx={{
-              pr: 7,
-              mt: isVisible ? -1 : 12,
+              pr: { md: 3, lg: 7 },
+              mt: isVisible ? { md: 7, lg: 3 } : 13,
               transition: "margin-top 0.8s ease-in-out",
             }}
           >
-            <Grid item xs={12} sx={{ px: 3 }}>
+            <Grid item xs={12} sx={{ px: { md: 1, lg: 3 } }}>
               <Box
                 sx={{
-                  height: "201px",
+                  height: { md: "180px", lg: "201px" },
                   width: "100%",
                   overflow: "hidden",
                   position: "relative",
@@ -110,10 +110,10 @@ export const AboutUsSliderDesktop = () => {
                 />
               </Box>
             </Grid>
-            <Grid item xs={12} sx={{ px: 3 }}>
+            <Grid item xs={12} sx={{ px: { md: 1, lg: 3 } }}>
               <Box
                 sx={{
-                  height: "201px",
+                  height: { md: "180px", lg: "201px" },
                   width: "100%",
                   overflow: "hidden",
                   position: "relative",
