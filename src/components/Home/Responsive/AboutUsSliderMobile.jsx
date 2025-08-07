@@ -9,15 +9,11 @@ export const AboutUsSliderMobile = () => {
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true);
-          // Optional: Disconnect observer after first trigger
-          observer.disconnect();
-        }
+        setIsVisible(entry.isIntersecting);
       },
       {
-        threshold: 0.3, // Trigger when 30% of component is visible
-        rootMargin: "0px 0px -50px 0px", // Trigger slightly before fully visible
+        threshold: 0.3,
+        rootMargin: "0px 0px -50px 0px",
       }
     );
 
@@ -25,19 +21,26 @@ export const AboutUsSliderMobile = () => {
       observer.observe(componentRef.current);
     }
 
-    return () => observer.disconnect();
+    return () => {
+      if (componentRef.current) {
+        observer.unobserve(componentRef.current);
+      }
+    };
   }, []);
 
   return (
     <div ref={componentRef}>
       <Box sx={{ mx: -10 }}>
         <Grid container gap={1.2}>
+          {/* FIRST ROW */}
           <Grid
             xs={12}
             sx={{
-              ml: isVisible ? 15 : 40,
+              transform: isVisible
+                ? { xs: "translateX(50px)", sm: "translateX(110px)" }
+                : { xs: "translateX(100px)", sm: "translateX(200px)" },
               mt: -1,
-              transition: "margin-left 0.8s ease-in-out",
+              transition: "transform 0.8s ease-in-out",
             }}
           >
             <Grid container>
@@ -53,7 +56,7 @@ export const AboutUsSliderMobile = () => {
                 <Box
                   sx={{
                     height: { xs: "129px", sm: "170px" },
-                    width: { xs: "148px", sm: "100%" },
+                    width: { xs: "148px", sm: "250px" },
                     overflow: "hidden",
                     position: "relative",
                     boxShadow: "0px 2px 5px 0px #0F481880",
@@ -65,6 +68,7 @@ export const AboutUsSliderMobile = () => {
                     layout="fill"
                     objectFit="cover"
                     objectPosition="center"
+                    alt="img1"
                   />
                 </Box>
               </Grid>
@@ -72,7 +76,7 @@ export const AboutUsSliderMobile = () => {
                 <Box
                   sx={{
                     height: { xs: "129px", sm: "170px" },
-                    width: { xs: "148px", sm: "100%" },
+                    width: { xs: "148px", sm: "250px" },
                     overflow: "hidden",
                     position: "relative",
                     boxShadow: "0px 2px 5px 0px #0F481880",
@@ -84,17 +88,22 @@ export const AboutUsSliderMobile = () => {
                     layout="fill"
                     objectFit="cover"
                     objectPosition="center"
+                    alt="img2"
                   />
                 </Box>
               </Grid>
             </Grid>
           </Grid>
+
+          {/* SECOND ROW */}
           <Grid
             xs={12}
             sx={{
-              mr: isVisible ? 15 : 40,
+              transform: isVisible
+                ? { xs: "translateX(-50px)", sm: "translateX(-110px)" }
+                : { xs: "translateX(-100px)", sm: "translateX(-200px)" },
               mt: 1,
-              transition: "margin-right 0.8s ease-in-out",
+              transition: "transform 0.8s ease-in-out",
             }}
           >
             <Grid container>
@@ -106,7 +115,7 @@ export const AboutUsSliderMobile = () => {
                 <Box
                   sx={{
                     height: { xs: "129px", sm: "170px" },
-                    width: { xs: "148px", sm: "100%" },
+                    width: { xs: "148px", sm: "250px" },
                     overflow: "hidden",
                     position: "relative",
                     boxShadow: "0px 2px 5px 0px #0F481880",
@@ -118,6 +127,7 @@ export const AboutUsSliderMobile = () => {
                     layout="fill"
                     objectFit="cover"
                     objectPosition="center"
+                    alt="img3"
                   />
                 </Box>
               </Grid>
@@ -125,7 +135,7 @@ export const AboutUsSliderMobile = () => {
                 <Box
                   sx={{
                     height: { xs: "129px", sm: "170px" },
-                    width: { xs: "148px", sm: "100%" },
+                    width: { xs: "148px", sm: "250px" },
                     overflow: "hidden",
                     position: "relative",
                     boxShadow: "0px 2px 5px 0px #0F481880",
@@ -137,6 +147,7 @@ export const AboutUsSliderMobile = () => {
                     layout="fill"
                     objectFit="cover"
                     objectPosition="center"
+                    alt="img4"
                   />
                 </Box>
               </Grid>
